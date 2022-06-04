@@ -2,6 +2,7 @@
 //Import your Components
 import Header from './compo/Header';
 import Form from './compo/Form';
+import GeneratedSignature from './compo/GeneratedSignature';
 
 //Variables
 
