@@ -2,6 +2,7 @@
 
 import PropTypes from 'prop-types';
 import Button from './Button';
+import logo from '../Logo.png'
 
 
 
@@ -14,7 +15,10 @@ const Header = ({title}) =>
 
   return (
     <header className='header'>
-        <h1>{title}</h1>
+        
+        <img src={logo} alt="SigMonD" />
+        
+        
         
         {/* <Button color="green" text="Create Sigature" 
         onClick={onClick} /> */}

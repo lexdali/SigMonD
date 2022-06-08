@@ -24,6 +24,8 @@ export class Form extends Component
          
          site: '',
          siteLink: '',
+         riskImageLink: '',
+         riskBanner: '',
 
          //Address
          address: '',
@@ -73,6 +75,18 @@ export class Form extends Component
     handleSiteLinkChange = (event) => {
       this.setState({
         siteLink: event.target.value
+      })
+    }
+    //Risk
+    handleRiskImageLinkChange = (event) => {
+      this.setState({
+        riskImageLink: event.target.value
+      })
+    }
+    //Banner
+    handleBannerLinkChange = (event) => {
+      this.setState({
+        riskBanner: event.target.value
       })
     }
 
@@ -206,14 +220,14 @@ export class Form extends Component
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="text-align:left;">
                                   <tbody>
                                     <tr>
-                                      <td align="left" style="font-family: Arial, Gotham, Verdana, Helvetica, sans-serif; font-size:14pt; line-height:120%; color: #042248; text-align:left;"><strong>${this.state.fullName}</strong> | <span style="font-size: 10pt; color: #a99b52;">${this.state.job}</span></td>
+                                      <td align="left" style="font-family: Arial, Gotham, Verdana, Helvetica, sans-serif; font-size:14pt; line-height:120%; color: #042248; text-align:left;"><strong>${this.state.fullName}</strong> <!--|--> <span style="font-size: 10pt; color: #a99b52;"><br />${this.state.job}</span></td>
                                     </tr>
                                     <tr>
                                       <td height="8" style="font-size:1px; line-height:1px;"></td>
                                     </tr>
                                     <tr>
                                       <td valign="top" align="left" style="font-family: Arial, Gotham, Verdana, Helvetica, sans-serif; font-size:11px; line-height:150%; color:#403e3f; text-align:left; font-weight:normal;"><img src="https://i.postimg.cc/VYfKy4M8/call.png" alt="call" width="11" height="11" style="border:none;width: 11px; height: 11px;">&nbsp;&nbsp;<a href="tel:" style="color:#403e3f; text-decoration:none !important; text-decoration-color: #FFFFFF;">${this.state.phone}</a><br>
-                                        <img src="https://i.postimg.cc/92NJSdQ6/web.png" alt="web" width="11" height="11" style="border:none; width: 11px; height: 11px;">&nbsp;&nbsp;<a href=${this.state.site} target="_blank" style="color: #403e3f; text-decoration:none !important; text-decoration-color: #FFFFFF;">${this.state.site}</a><br><img src="https://i.postimg.cc/HYj3nxBv/location.png" alt="web" width="11" height="11" style="border:none; width: 11px; height: 11px;"><a style="color: #403e3f; text-decoration:none !important; text-decoration-color: #FFFFFF;" href=${this.state.mapsLink} target="_blank">&nbsp;&nbsp;${this.state.address}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${this.state.city}, ${this.state.USState} ${this.state.postCode}</a>
+                                        <img src="https://i.postimg.cc/92NJSdQ6/web.png" alt="web" width="11" height="11" style="border:none; width: 11px; height: 11px;">&nbsp;&nbsp;<a href=${this.state.siteLink} target="_blank" style="color: #403e3f; text-decoration:none !important; text-decoration-color: #FFFFFF;">${this.state.site}</a><br><img src="https://i.postimg.cc/HYj3nxBv/location.png" alt="web" width="11" height="11" style="border:none; width: 11px; height: 11px;"><a style="color: #403e3f; text-decoration:none !important; text-decoration-color: #FFFFFF;" href=${this.state.mapsLink} target="_blank">&nbsp;&nbsp;${this.state.address}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${this.state.city}, ${this.state.USState} ${this.state.postCode}</a>
       
                                         <p style="padding: 0px; margin: 5px 0px 0px 0px; line-height: 1px;"><a href=${this.state.facebookLink} target="_blank"><img src="https://i.postimg.cc/gYgNGRq6/facebook.png" width="20" height="20" alt="instagram" border="0" style="width: 20px; height: 20px; border: none; display: inline-block;"></a> &nbsp;<a href=${this.state.linkedinLink} target="_blank"><img src="https://i.postimg.cc/Ws65fxd8/linkedin.png" width="20" height="20" alt="facebook" border="0" style="width: 20px; height: 20px; border: none; display: inline-block;"></a> &nbsp;<a href=${this.state.youtubeLink} target="_blank"><img src="https://i.postimg.cc/y15jZHG1/youtube.png" width="20" height="20" alt="linkedin" border="0" style="width: 20px; height: 20px; border: none; display: inline-block;"></a></p>
                                       </td>
@@ -234,7 +248,7 @@ export class Form extends Component
       <!-- RISK? WHAT'S RISK? -->
                   <tr>
                     <td>
-                      <a href=${this.state.siteLink} target="_blank">
+                      <a href=${this.state.riskImageLink} target="_blank">
                         <img style="width: 370px;" src="https://i.postimg.cc/9Fb7bvtZ/risk.png" alt="risk?">
                       </a>
                     </td>
@@ -243,7 +257,7 @@ export class Form extends Component
                   <tr>
                     
                     <td bgcolor="#042248" align="left" style="font-family: Arial, Gotham, Helvetica, sans-serif; font-size: 8pt; line-height:130%; color:#ffffff; text-align: center; background-color: #042248; border-bottom: 3px solid #a99b52; padding: 5px 0px;">
-                      <a style="text-decoration: none; color: white;" href=${this.state.siteLink} target="_blank">
+                      <a style="text-decoration: none; color: white;" href=${this.state.riskBanner} target="_blank">
                         <div style="height: 100%; width: 100%;">
                           CLICK HERE TO DISOVER YOUR PERSONAL RISK NUMBER
                         </div>
@@ -285,25 +299,30 @@ export class Form extends Component
   render() {
     return(
       <>
+        <h1><a href='https://www.xorex.net/'><span className='header-first'>developed by </span>
+        <span className='header-second'>Xorex Media</span></a></h1> 
+        
         <form onSubmit={this.handleSubmit}>
           <label>Full Name:</label>
           <input className="fullName" type="text" 
           value={this.state.fullName}
-          onChange={this.handleFullNameChange} />
+          onChange={this.handleFullNameChange}
+          placeholder="John Doe"
+          />
           <br />
 
           <label>Title/Job Position:</label>
           <input className="job" type="text" 
           value={this.state.job}
           onChange={this.handleJobChange} 
-          placeholder="President, CEO, Accountant, etc"/>
+          placeholder="President, CEO, etc"/>
           <br />
 
           <label>Phone:</label>
           <input className="phone" type="text" 
           value={this.state.phone}
           onChange={this.handlePhoneChange} 
-          placeholder="530-000-0000, (530) 000-0000"/>
+          placeholder="(530) 000-0000"/>
           <br />
 
           {/* <label>Phone Link:</label>
@@ -321,12 +340,28 @@ export class Form extends Component
           <br />
 
           <label>Website URL:</label>
-          <input className="siteLink" type="text" 
+          <input className="siteLink URLs" type="text" 
           value={this.state.siteLink}
           onChange={this.handleSiteLinkChange} 
           placeholder="https://www.xorex.net"/>
           <br />
 
+          <label>Risk Tolerance Image URL:</label>
+          <input className="riskImage URLs" type="text" 
+          value={this.state.riskImageLink}
+          onChange={this.handleRiskImageLinkChange} 
+          placeholder="https://www.google.com/"/>
+
+          <br />
+
+          <label>Risk Score Banner URL:</label>
+          <input className="bannerLink URLs" type="text" 
+          value={this.state.riskBanner}
+          onChange={this.handleBannerLinkChange} 
+          placeholder="https://www.google.com/"/>
+
+          <br />
+          
           <label>Address:</label>
           <input className="address" type="text" 
           value={this.state.address}
@@ -352,32 +387,34 @@ export class Form extends Component
           <br />
 
           <label>Maps URL:</label>
-          <input className="mapsLink" type="text" 
+          <input className="mapsLink URLs" type="text" 
           value={this.state.mapsLink}
           onChange={this.handleMapsLinkChange} />
           <br />
 
           <label>Facebook Profile URL:</label>
-          <input className="fbLink" type="text" 
+          <input className="fbLink URLs" type="text" 
           value={this.state.facebookLink}
           onChange={this.handleFacebookLinkChange} />
 
           <br />
 
           <label>LinkedIn Profile URL:</label>
-          <input className="linkedinLink" type="text" 
+          <input className="linkedinLink URLs" type="text" 
           value={this.state.linkedinLink}
           onChange={this.handleLinkedInLinkChange} />
           <br />
 
           <label>YouTube Channel URL:</label>
-          <input className="ytLink" type="text" 
+          <input className="ytLink URLs" type="text" 
           value={this.state.youtubeLink}
           onChange={this.handleYouTubeLinkChange} />
 
           <br />
 
-          <button type='submit'>Download Signature</button>
+          <div className='download'>
+            <button type='submit'>Download Signature</button>
+          </div>
         </form>
 
         <br />
