@@ -123,12 +123,18 @@ const GeneratedSignature = ({
     </body>
     </html>
     `;
-
+    
   return (
     <div className='GeneratedSignature'>
         <h2>Results:</h2>
 
         <textarea cols={50} rows={4} value={sig}></textarea>
+
+        <br />
+        <br />
+
+        
+        
     </div>
   )
 }
