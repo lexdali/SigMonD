@@ -126,7 +126,7 @@ const GeneratedSignature = ({
     
   return (
     <div className='GeneratedSignature'>
-        <h2>Results:</h2>
+        <h2>Result:</h2>
 
         <textarea cols={50} rows={4} value={sig}></textarea>
 

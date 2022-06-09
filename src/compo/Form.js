@@ -307,7 +307,7 @@ export class Form extends Component
           <input className="fullName" type="text" 
           value={this.state.fullName}
           onChange={this.handleFullNameChange}
-          placeholder="John Doe"
+          placeholder="Joey Benovitez"
           />
           <br />
 
@@ -365,50 +365,67 @@ export class Form extends Component
           <label>Address:</label>
           <input className="address" type="text" 
           value={this.state.address}
-          onChange={this.handleAddressChange} />
+          onChange={this.handleAddressChange} 
+          placeholder="1600 Pennsylvania Avenue"
+          />
           <br />
 
           <label>City:</label>
           <input className="city" type="text" 
           value={this.state.city}
-          onChange={this.handleCityChange} />
+          onChange={this.handleCityChange}
+          placeholder="Washington"
+          />
           <br />
 
           <label>State:</label>
           <input className="USState" type="text" 
           value={this.state.USState}
-          onChange={this.handleUSStateChange} />
+          onChange={this.handleUSStateChange} 
+          placeholder="D.C."
+          />
           <br />
 
           <label>ZIP Code:</label>
           <input className="postCode" type="text" 
           value={this.state.postCode}
-          onChange={this.handlePostCodeChange} />
+          onChange={this.handlePostCodeChange} 
+          placeholder="20500"
+          />
           <br />
 
           <label>Maps URL:</label>
           <input className="mapsLink URLs" type="text" 
           value={this.state.mapsLink}
-          onChange={this.handleMapsLinkChange} />
+          onChange={this.handleMapsLinkChange} 
+          placeholder="https://maps.google.com"
+          />
+          
           <br />
 
           <label>Facebook Profile URL:</label>
           <input className="fbLink URLs" type="text" 
           value={this.state.facebookLink}
-          onChange={this.handleFacebookLinkChange} />
+          onChange={this.handleFacebookLinkChange}
+          placeholder="https://www.facebook.com"
+          />
 
           <br />
 
           <label>LinkedIn Profile URL:</label>
           <input className="linkedinLink URLs" type="text" 
           value={this.state.linkedinLink}
-          onChange={this.handleLinkedInLinkChange} />
+          onChange={this.handleLinkedInLinkChange}
+          placeholder="https://www.linkedin.com"
+          />
           <br />
 
           <label>YouTube Channel URL:</label>
           <input className="ytLink URLs" type="text" 
           value={this.state.youtubeLink}
-          onChange={this.handleYouTubeLinkChange} />
+          onChange={this.handleYouTubeLinkChange}
+          placeholder="https://www.youtube.com"
+          />
 
           <br />
 
@@ -420,6 +437,7 @@ export class Form extends Component
         <br />
 
         <GeneratedSignature 
+        className="result"
         theName={this.state.fullName}
         theJob={this.state.job}
         thePhone={this.state.phone}

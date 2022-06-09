@@ -16,7 +16,7 @@ const Header = ({title}) =>
   return (
     <header className='header'>
         
-        <img src={logo} alt="SigMonD" />
+        <a href="./"><img id='logo' src={logo} alt="SigMonD"/></a>
         
         
         
